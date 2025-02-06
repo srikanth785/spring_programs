@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ticket Booking APP</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Get Ticket details by Entering ticket Number</h1>
+       
+       <form th:action="@{/get-ticket}" >
+       
+         <table>
+             	<tr>
+             	  <td>Enter Ticket ID :</td>
+             	  <td><input type="text" name="ticketNumber"></td>
+             	</tr>
+             		 <tr>
+             	  <td></td>
+             	  <td><input type="submit" value="Get Ticket"></td>
+             	</tr>
+             	
+             	</table>
+             	
+             	</form>
+             	<hr/>
+             	
+             <table>
+             <tr>
+             <td>Passenger Name:</td>
+             <td><p th:text="${ticket.name}"/></td>
+             </tr>
+             
+              <tr>
+             <td>Departure AT:</td>
+             <td><p th:text="${ticket.departure}"/></td>
+             </tr>
+             
+              <tr>
+             <td>Arrival AT:</td>
+             <td><p th:text="${ticket.arrival}"/></td>
+             </tr>
+             
+              <tr>
+             <td>Ticket Status:</td>
+             <td><p th:text="${ticket.status}"/></td>
+             </tr>
+             
+              <tr>
+             <td>Ticket Cost:</td>
+             <td><p th:text="${ticket.ticketCost}"/></td>
+             </tr>
+             
+                <tr>
+             <td>Date Of Journey:</td>
+             <td><p th:text="${ticket.dateOfJourney}"/></td>
+             </tr>
+             </table>
+                
+</body>
+</html>
