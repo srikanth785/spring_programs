@@ -1,0 +1,14 @@
+docker commit --change "CMD ['java', '-jar', '/tmp/rest-demo.jar']" goofy_goldw
+asser cat/rest-demo:v2
+
+pls correct in windows option
+
+ChatGPT said:
+You're almost there — but in Windows, especially using CMD or PowerShell, quoting can be tricky. The issue with your command is that the array syntax ['java', '-jar', ...] is using single quotes, which Docker doesn’t treat as a valid JSON array. Docker expects the CMD in exec form, which must use double quotes for JSON (not single quotes).
+
+✅ Correct Docker Commit Command on Windows (CMD or PowerShell)
+✔️ Use double quotes around the entire CMD and escape internal quotes:
+powershell
+Copy
+Edit
+docker commit --change "CMD [\"java\", \"-jar\", \"/tmp/rest-demo.jar\"]" goofy_goldwasser cat/rest-demo:v2

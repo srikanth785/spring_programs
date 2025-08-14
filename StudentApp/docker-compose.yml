@@ -1,0 +1,28 @@
+services:
+  app:
+    build: .
+    container_name: student_app
+    ports:
+      - "1990:8080"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+    
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: cat
+      POSTGRES_USER: nani
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    volumes:
+        - postgres-s-data:/var/lib/postgresql/data
+networks:
+  app-network:
+volumes:
+  postgres-s-data:
