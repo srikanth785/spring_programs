@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: CatApp1
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  boot:
+    admin:
+      client:
+        url: http://localhost:1414/
+server:
+  port: 1990
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

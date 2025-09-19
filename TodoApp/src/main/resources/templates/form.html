@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add/Edit Todo</title>
+</head>
+<body>
+<h2 th:text="${todo.id == null} ? 'Add Todo' : 'Edit Todo'"></h2>
+<form th:action="@{/save}" th:object="${todo}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" /><br/>
+    <label>Description:</label>
+    <input type="text" th:field="*{description}" /><br/>
+    <label>Completed:</label>
+    <input type="checkbox" th:field="*{completed}" /><br/>
+    <button type="submit">Save</button>
+</form>
+<a href="/">Back</a>
+</body>
+</html>

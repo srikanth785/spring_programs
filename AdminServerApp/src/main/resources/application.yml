@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: AdminServerApp
+
+server:
+  port: 1414

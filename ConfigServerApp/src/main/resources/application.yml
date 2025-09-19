@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ConfigServerApp
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/srikanth785/cat
+          clone-on-start: true
+          try-master-branch: false
+          default-label: main

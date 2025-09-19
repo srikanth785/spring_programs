@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: catapi1
+          uri: lb://CATAPP1
+          predicates:
+            - Path=/info
+        - id: catapi2
+          uri: lb://CATAPP2
+          predicates:
+            - Path=/moreinfo
+  application:
+    name: ApiGateway2
+
+server:
+  port: 1983
